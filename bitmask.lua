@@ -12,7 +12,7 @@ function bitmask8(value, returnType)
 		for i=7,0,-1 do
 			local val = 0
 			val = value - 2 ^ i
-			if returnType == "1" then
+			if returnType == 1 then
 				if val == 0 then
 					table.insert(bits , 2 ^ i)
 					break
@@ -20,7 +20,7 @@ function bitmask8(value, returnType)
 					table.insert(bits , 2 ^ i)
 					value = val
 				end
-			elseif returnType == "2" then
+			elseif returnType == 2 then
 				if val == 0 then
 					bitsString = bitsString .. 2 ^ i .. "|"
 					break
@@ -40,7 +40,7 @@ function bitmask8(value, returnType)
 				end
 			end
 		end
-		if returnType == "2" then
+		if returnType == 2 then
 			return bitsString
 		else
 			return bits
@@ -66,7 +66,7 @@ function bitmask16(value, returnType)
 		for i=14,0,-1 do
 			local val = 0
 			val = value - 2 ^ i
-			if returnType == "1" then
+			if returnType == 1 then
 				if val == 0 then
 					table.insert(bits , 2 ^ i)
 					break
@@ -74,7 +74,7 @@ function bitmask16(value, returnType)
 					table.insert(bits , 2 ^ i)
 					value = val
 				end
-			elseif returnType == "2" then
+			elseif returnType == 2 then
 				if val == 0 then
 					bitsString = bitsString .. 2 ^ i .. "|"
 					break
@@ -94,7 +94,7 @@ function bitmask16(value, returnType)
 				end
 			end
 		end
-		if returnType == "2" then
+		if returnType == 2 then
 			return bitsString
 		else
 			return bits
@@ -120,7 +120,7 @@ function bitmask32(value, returnType)
 		for i=30,0,-1 do
 			local val = 0
 			val = value - 2 ^ i
-			if returnType == "1" then
+			if returnType == 1 then
 				if val == 0 then
 					table.insert(bits , 2 ^ i)
 					break
@@ -128,7 +128,7 @@ function bitmask32(value, returnType)
 					table.insert(bits , 2 ^ i)
 					value = val
 				end
-			elseif returnType == "2" then
+			elseif returnType == 2 then
 				if val == 0 then
 					bitsString = bitsString .. 2 ^ i .. "|"
 					break
@@ -148,7 +148,7 @@ function bitmask32(value, returnType)
 				end
 			end
 		end
-		if returnType == "2" then
+		if returnType == 2 then
 			return bitsString
 		else
 			return bits
@@ -177,7 +177,7 @@ function bitmask64(value, returnType)
 		for i=63,0,-1 do
 			local val = 0
 			val = value - 2 ^ i
-			if returnType == "1" then
+			if returnType == 1 then
 				if val == 0 then
 					table.insert(bits , 2 ^ i)
 					break
@@ -185,7 +185,7 @@ function bitmask64(value, returnType)
 					table.insert(bits , 2 ^ i)
 					value = val
 				end
-			elseif returnType == "2" then
+			elseif returnType == 2 then
 				if val == 0 then
 					bitsString = bitsString .. 2 ^ i .. "|"
 					break
@@ -205,7 +205,7 @@ function bitmask64(value, returnType)
 				end
 			end
 		end
-		if returnType == "2" then
+		if returnType == 2 then
 			return bitsString
 		else
 			return bits

@@ -1,9 +1,13 @@
 	Script for calculating bitmasks from numerical values in Lua
-	Input must be number or else use tonumber()
+	Input value and returnType must be number or else use tonumber()
 	You can choose in what format script returns value with returnType variable:
 	
 returnType = 1
+	
 	returns table that contains all values contained into given numerical value
+	
+	E.G. 8 bit bitmask of number 59
+	bits = {32, 16, 8, 2, 1}
 	
 	useful in usage with if statement to check if given numerical value contains
 	needed value or not 
@@ -12,17 +16,9 @@ returnType = 2
 	
 	returns string with all values contained into given numerical value which all
 	have "|" at the end of them.
+	
 	E.G. 8 bit bitmask of number 59
-	bits = {
-	128 = false
-	64 = false
-	32 = true
-	16 = true
-	8 = true
-	4 = false
-	2 = true
-	1 = true
-	}
+	bits = "32|16|8|2|1|"
 	
 	useful with string.find(bits, neededValue.."|") to check if string contains
 	needed value 
@@ -34,15 +30,16 @@ if no returnType is specified
 	
 	returns table with 2^n value for specified bitmask type as index and
 	true or false for each index as value
+	
 	E.G. 8 bit bitmask of number 59
 	bits = {
-	128 = false
-	64 = false
-	32 = true
-	16 = true
-	8 = true
-	4 = false
-	2 = true
+	128 = false,
+	64 = false,
+	32 = true,
+	16 = true,
+	8 = true,
+	4 = false,
+	2 = true,
 	1 = true
 	}
 	
