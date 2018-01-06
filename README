@@ -1,0 +1,64 @@
+	Script for calculating bitmasks from numerical values in Lua
+	Input must be number or else use tonumber()
+	You can choose in what format script returns value with returnType variable:
+	
+returnType = 1
+	returns table that contains all values contained into given numerical value
+	
+	useful in usage with if statement to check if given numerical value contains
+	needed value or not 
+	
+returnType = 2
+	
+	returns string with all values contained into given numerical value which all
+	have "|" at the end of them.
+	E.G. 8 bit bitmask of number 59
+	bits = {
+	128 = false
+	64 = false
+	32 = true
+	16 = true
+	8 = true
+	4 = false
+	2 = true
+	1 = true
+	}
+	
+	useful with string.find(bits, neededValue.."|") to check if string contains
+	needed value 
+	or 
+	looping string.gmatch(bits, "%d+|") which returns each contained value by each
+	iteration it is run
+	
+if no returnType is specified
+	
+	returns table with 2^n value for specified bitmask type as index and
+	true or false for each index as value
+	E.G. 8 bit bitmask of number 59
+	bits = {
+	128 = false
+	64 = false
+	32 = true
+	16 = true
+	8 = true
+	4 = false
+	2 = true
+	1 = true
+	}
+	
+	useful in usage with if statement to check if given numerical value contains
+	needed value or not
+	
+returns either table or string if operation was successful
+or
+returns "VALUE_TOO_BIG" if given value is bigger than function is made for
+or
+returns "VALUE_ZERO" if provided value is 0
+or
+returns "VALUE_NIL" if provided value is nil
+or
+returns "VALUE_NOT_NUMBER" if type of value is not number
+or
+returns "UNKNOWN_ERROR" if unknown error occured
+
+greetings from Latvia - healLV
